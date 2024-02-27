@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="add-student-container">
+    <h2>הוסף תלמיד חדש</h2>
+    <form [formGroup]="studentForm" (submit)="onSubmit()">
+      <div class="form-group">
+        <label for="studentID">תעודת זהות:</label>
+        <input type="text" id="studentID" name="studentID" formControlName="studentID">
+      </div>
+      <div class="form-group">
+        <label for="firstName">שם פרטי:</label>
+        <input type="text" id="firstName" name="firstName" formControlName="firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">שם משפחה:</label>
+        <input type="text" id="lastName" name="lastName" formControlName="lastName" required>
+      </div>
+      <div class="form-group">
+        <label for="birthDate">תאריך לידה:</label>
+        <input type="date" id="birthDate" name="birthDate" formControlName="birthDate" required>
+      </div>
+      <div class="form-group">
+        <label for="birthCountry">ארץ לידה:</label>
+        <input type="text" id="birthCountry" name="birthCountry" formControlName="birthCountry" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">מגדר:</label>
+        <input type="radio" id="gender" name="gender" formControlName="gender" value="זכר" required> זכר
+        <input type="radio" id="gender" name="gender" formControlName="gender" value="נקבה" required> נקבה
+      </div>
+      <div class="form-group">
+        <label for="class">כיתה:</label>
+        <input type="text" id="class" name="class" formControlName="class" required>
+      </div>
+      <div class="form-group">
+        <label for="questionnaireStatus">סטאטוס שאלון:</label>
+        <input type="text" id="questionnaireStatus" name="questionnaireStatus" formControlName="questionnaireStatus">
+      </div>
+      <div class="form-group">
+        <label for="personalPlanStatus">סטאטוס תוכנית אישית:</label>
+        <input type="text" id="personalPlanStatus" name="personalPlanStatus" formControlName="personalPlanStatus">
+      </div>
+      <div class="form-group">
+        <label for="studentStatus">סטאטוס תלמיד:</label>
+        <input type="text" id="studentStatus" name="studentStatus" formControlName="studentStatus" required>
+      </div>
+      <div class="form-group">
+        <label for="studentType">סוג תלמיד:</label>
+        <input type="text" id="studentType" name="studentType" formControlName="studentType" required>
+      </div>
+      <div class="form-group">
+        <label for="previousIdentificationMessage">מספר זהות קודם:</label>
+        <input type="text" id="previousIdentificationMessage" formControlName="previousIdentificationMessage" name="previousIdentificationMessage" required>
+      </div>
+
+      <div class="form-group" style="display: flex; flex-direction: column;">
+        <label for="imagePath" style="margin-bottom: 5px;">תמונה:</label>
+        <div style="display: flex; align-items: center;">
+          <input type="text" formControlName="imagePath" id="imagePath" name="imagePath" [value]="selectedFileName" readonly="readonly" required style="flex: 1;">
+          <label class="file-upload-label" (click)="cleanFileText()" style="cursor: pointer; margin-left: -20px;">נקה</label>
+        </div>
+      </div>
+
+
+      <div class="file-upload">
+        <label for="file-upload-input" class="file-upload-label">בחר תמונה</label>
+        <input id="file-upload-input" type="file" (change)="onFileSelected($event)" accept="image/*" />
+
+      </div>
+
+      <button type="submit" style="width:100px; margin-right:170px;">הוסף תלמיד</button>
+    </form>
+  </div>
+  </body>
+</html>

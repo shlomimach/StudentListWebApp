@@ -1,0 +1,81 @@
+@import '../../../styles.css';
+
+.add-student-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type="date"], select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.file-upload {
+  margin: 20px 0;
+  position: relative;
+  display: inline-block;
+}
+
+  .file-upload input[type="file"] {
+    display: none; 
+  }
+
+.file-upload-label {
+  background-color: #4CAF50; /* צבע רקע */
+  color: white; /* צבע טקסט */
+  padding: 10px 20px; /* ריפוד */
+  border-radius: 5px; /* קצוות מעוגלים */
+  cursor: pointer; /* סמן כפתור */
+  font-weight: bold; /* משקל גופן */
+  text-align: center; /* מירכוז טקסט */
+  display: inline-block; /* הצגה בשורה */
+}
+
+  .file-upload-label:hover {
+    background-color: #45a049; /* צבע רקע ב-hover */
+  }
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  /*768 פיקסלים שנפוץ לניידים וטאבלטים*/
+  .add-student-container {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  label {
+    margin-bottom: 3px;
+  }
+
+  input[type="text"], input[type="date"], select {
+    padding: 8px;
+  }
+
+  .file-upload-label {
+    padding: 8px 16px;
+  }
+
+  button {
+    width: auto;
+    margin-right: 0;
+  }
+}
